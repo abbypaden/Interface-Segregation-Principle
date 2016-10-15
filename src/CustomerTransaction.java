@@ -1,8 +1,16 @@
 import java.util.Date;
+import java.util.List;
 
 public class CustomerTransaction implements Accounting, Reporting {
     
-    // methods for reporting
+    private List<Product> products;
+    
+    private Customer customer;
+    
+    public CustomerTransaction(Customer customer, List<Product> products) {
+        this.products = products;
+        this.customer = customer;
+    }
     
     @Override
     public String getName() {
