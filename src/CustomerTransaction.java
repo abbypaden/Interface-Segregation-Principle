@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class CustomerTransaction implements Accounting, Reporting {
@@ -24,7 +25,11 @@ public class CustomerTransaction implements Accounting, Reporting {
     
     @Override
     public String productBreakDown() {
-        return "list of products for reporting";
+        String reportList = null;
+        for (Product product : products) {
+            reportList += product.getProductName();
+        }
+        return reportList;
     }
     
     @Override
